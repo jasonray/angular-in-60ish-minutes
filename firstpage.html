@@ -1,6 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Angular in 60-ish minutes, firstpage</title>
+</head>
 	<body>
-
+		<div class="container">
+			Name: <input type="text" ng-model="name" /> 
+			<br>
+			Output: {{ name }}
+		</div>
 
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js'></script>
 	</body>
