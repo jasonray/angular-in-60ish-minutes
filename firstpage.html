@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-ng-app>
+<html data-ng-app="demoApp">
 <head>
 	<title>Angular in 60-ish minutes, firstpage</title>
 </head>
@@ -15,14 +15,16 @@
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js'></script>
 
 		<script>
-			function SimpleController($scope) {
+			var demoApp = angular.module('demoApp',[]);
+
+			demoApp.controller('SimpleController', function($scope) {
 				$scope.customers = 
 				    [ 
 				    	{name:'John Smith', city:'Dallas', sales:'4000'}, 
 				    	{name:'John Doe', city:'Austin', sales:'10000'}, 
 				    	{name:'Jane Doe', city:'Houston', sales:'100'} 
 				    ]
-			}
+			});
 		</script>
 	</body>
 </html>
