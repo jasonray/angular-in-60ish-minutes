@@ -3,18 +3,18 @@
 <head>
 	<title>Angular in 60-ish minutes, firstpage</title>
 </head>
-	<body>
+	<body data-ng-init="customers=[ 
+		                         {name:'John Smith',city:'Dallas'}, 
+	                             {name:'John Doe', city:'Austin'}, 
+	                             {name:'Jane Doe', city:'Houston'} ]">
 		<div class="container">
-			<h3>basic model binding</h3>
 			Input: <input type="text" data-ng-model="name" /> 
 			<br>
 			Output: {{ name }}
 		</div>
-		<div class="container"
-			data-ng-init="personnames=['Dave','Napur','Heedy','Shriva', 'John Smith', 'John Doe', 'Jane Doe']">
-			<h3>looping with ng-repeat directive</h3>
+		<div class="container">
 			<ul>
-				<li data-ng-repeat="personname in personnames">{{ personname }}</li>
+				<li data-ng-repeat="customer in customers">{{ customer.name }} . {{ customer.city }}</li>
 			</ul>
 		</div>
 
