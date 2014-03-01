@@ -11,10 +11,10 @@
 			Output: {{ name }}
 		</div>
 		<div class="container"
-			data-ng-init="names=['Dave','Napur','Heedy','Shriva']">
+			data-ng-init="personnames=['Dave','Napur','Heedy','Shriva', 'John Smith', 'John Doe', 'Jane Doe']">
 			<h3>looping with ng-repeat directive</h3>
 			<ul>
-				<li data-ng-repeat="name in names">{{ name }}</li>
+				<li data-ng-repeat="personname in personnames">{{ personname }}</li>
 			</ul>
 		</div>
 
