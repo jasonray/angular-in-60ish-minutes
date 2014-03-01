@@ -8,13 +8,11 @@
 	                             {name:'John Doe', city:'Austin'}, 
 	                             {name:'Jane Doe', city:'Houston'} ]">
 		<div class="container">
-			Input: <input type="text" data-ng-model="name" /> 
-			<br>
-			Output: {{ name }}
+			filter: <input type="text" data-ng-model="name" /> 
 		</div>
 		<div class="container">
 			<ul>
-				<li data-ng-repeat="customer in customers">{{ customer.name }} . {{ customer.city }}</li>
+				<li data-ng-repeat="customer in customers | filter:name">{{ customer.name }} . {{ customer.city }}</li>
 			</ul>
 		</div>
 
