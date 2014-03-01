@@ -12,7 +12,7 @@
 		</div>
 		<div class="container">
 			<ul>
-				<li data-ng-repeat="customer in customers | filter:name | orderBy:'city'">{{ customer.name }} . {{ customer.city }}</li>
+				<li data-ng-repeat="customer in customers | filter:name | orderBy:'city'">{{ customer.name | uppercase }} . {{ customer.city | lowercase }}</li>
 			</ul>
 		</div>
 
