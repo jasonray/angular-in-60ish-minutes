@@ -5,9 +5,17 @@
 </head>
 	<body>
 		<div class="container">
+			<h3>basic model binding</h3>
 			Input: <input type="text" data-ng-model="name" /> 
 			<br>
 			Output: {{ name }}
+		</div>
+		<div class="container"
+			data-ng-init="names=['Dave','Napur','Heedy','Shriva']">
+			<h3>looping with ng-repeat directive</h3>
+			<ul>
+				<li data-ng-repeat="name in names">{{ name }}</li>
+			</ul>
 		</div>
 
 		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js'></script>
