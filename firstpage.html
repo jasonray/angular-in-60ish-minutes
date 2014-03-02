@@ -4,30 +4,52 @@
 	<title>Angular in 60-ish minutes, firstpage</title>
 </head>
 	<body>
-		<div class="container" data-ng-controller="SimpleController">
-			filter: <input type="text" data-ng-model="name" /> 
-
-			<ul>
-				<li data-ng-repeat="customer in customers | filter:name | orderBy:'city'">{{ customer.name | uppercase }} . {{ customer.city | lowercase }} . {{ customer.sales | currency}} </li>
-			</ul>
+		<div>
+			<!-- placeholder for views -->
+			<div data-ng-view="">
+			</div>
 		</div>
 
-		<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.js'></script>
+
+		<script src='bower_components/angular/angular.js'></script>
+		<script src='bower_components/angular-route/angular-route.js'></script>
 
 		<script>
-			var demoApp = angular.module('demoApp',[]);
+			var demoApp = angular.module('demoApp',['ngRoute']);
 
-			var controllers = {};
-			controllers.SimpleController = function($scope) {
+			demoApp.config(function($routeProvider) {
+				$routeProvider
+					.when("/",
+						{
+							controller: 'SimpleController',
+							templateUrl: 'view1.html'
+						})
+					.when("/2",
+						{
+							controller: 'SimpleController',
+							templateUrl: 'view2.html'
+						})
+					.otherwise({redirectTo: "/"});
+			});
+
+			demoApp.controller('SimpleController', function($scope) {
 				$scope.customers = 
 				    [ 
 				    	{name:'John Smith', city:'Dallas', sales:'4000'}, 
 				    	{name:'John Doe', city:'Austin', sales:'10000'}, 
 				    	{name:'Jane Doe', city:'Houston', sales:'100'} 
-				    ]
-			};
+				    ];
 
-			demoApp.controller(controllers);
+			    $scope.addCustomer = function() {
+			    	$scope.customers.push(
+			    		{
+			    			name:$scope.newCustomer.name, 
+			    			city:$scope.newCustomer.city
+			    		}
+			    	);
+			    };
+			});
+
 		</script>
 	</body>
 </html>

@@ -1,0 +1,5 @@
+<div class="container">
+	<ul>
+		<li data-ng-repeat="customer in customers | filter:name | orderBy:'city'">{{ customer.name }} </li>
+	</ul>
+</div>
