@@ -13,4 +13,3 @@ Either download copies of `angular.js` and `angular-route.js` or use bower:
 bower install angular
 bower install angular-route
 ```
-
